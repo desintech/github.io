@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("a").click(function(event){
+                    event.preventDefault();
+                    $("#content").load($(this).attr('href'));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="menu">
+            <a href="carousel.html">Page 1</a>
+            <a href="splitter.html">Page 2</a>
+            <!-- <a href="page3.html">Page 3</a> -->
+        </div>
+        <div id="content">
+            <!-- The content of the linked page will be loaded here -->
+        </div>
+    </body>
+</html>
