@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col">
           <label for="inputString" class="form-label">Enter the text to split:</label>
-          <textarea class="form-control" id="inputString"></textarea>
+          <textarea class="form-control" id="inputString" oninput="countCharacters()"></textarea>
         </div>
       </div>
       <div class="row">
@@ -70,6 +70,11 @@ function splitString() {
   for (let i = 0; i < inputString.length; i += charLimit) {
     chunks.push(inputString.substr(i, charLimit));
   }
+function countCharacters() {
+  var text = document.getElementById("myTextArea").value;
+  var count = text.length;
+  document.getElementById("count").innerHTML = "Length: " + count;
+}
 
   // Save each chunk as a separate file
   for (let i = 0; i < chunks.length; i++) {
